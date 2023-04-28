@@ -25,7 +25,13 @@ function consumoDeAPI() {
         type: "get",
         url: "https://pokeapi.co/api/v2/pokemon",
         success: function (response) {
-            console.log(response);
+            response.results.pop();
+            console.log(response.results);
+          var primero =  response.results.shift();//elimina primer elemento, lo guardo en variable
+            console.log(response.results);
+            response.results.push(primero);//agrega el elemento al final del arreglo
+            console.log(response.results);
+
         }
     });
 
